@@ -33,9 +33,7 @@ const SearchEngine = () => {
     setSearchResults(resp.data.query.search);
     setSearchInfo(resp.data.query.searchinfo);
   };
-
-  const wiki = `https://en.wikipedia.org/?curid=${searchInfo.pageid}`;
-  console.log(wiki)
+  
   const favState = useSelector((state) => state.favoriteUnFavorite);
   return (
     <div className="search-app">
@@ -60,17 +58,7 @@ const SearchEngine = () => {
 
       <div class="favorite_container">
         <h3>Your Favorite List</h3>
-        <input
-          type="select"
-          name="favorite"
-          className="favorite_input"
-          value={favState}
-        />
-        <a href={wiki}
-        rel = "nofollow"
-        target="_blank">
-          <option>{favState}</option>
-        </a>
+        {favState.map(i => <Link to= {`/show_content/${i}`}>{i}</Link>)}
       </div>
 
       <div className="search-results">
