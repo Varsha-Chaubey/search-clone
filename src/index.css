@@ -188,8 +188,13 @@ h1{
   background-color: #FFF;
   border-radius: 16px;
   transition: 0.4s;
+  line-height: 1.6;
 }
-
+.wiki-btn{
+  text-decoration: none;
+  color: #2980b9;
+  font-size: 1.5rem;
+}
 .favorite_btn a{
   margin-left: 30px;
   background-color: #e2062c;
