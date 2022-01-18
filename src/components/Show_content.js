@@ -22,7 +22,8 @@ const Show_content = () => {
     await fetchContent();
   }, [setData]);
 
-  // const url = `https://en.wikipedia.org/?curid=${data.pageid}`;
+  const url = `https://en.wikipedia.org/?curid=${data.pageid}`;
+  // console.log("url = ", url);
 
   const dispatch = useDispatch();
   return (
@@ -30,7 +31,12 @@ const Show_content = () => {
       {/* <Link to='/'>goback</Link> */}
       <h1 className={styles.className}>Your selected result </h1>
       <h2>{data.title}</h2>
-      <p>{data.extract}</p>
+      <p>
+        {data.extract}
+         <a href={url} rel="nofollow" target="_blank" className="wiki-btn">
+            wikipedia
+         </a>
+      </p>
 
       <div className="favorite_btn">
         <a
